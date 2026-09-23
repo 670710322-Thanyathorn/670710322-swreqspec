@@ -1,0 +1,1 @@
+"""Booking backend application package."""
