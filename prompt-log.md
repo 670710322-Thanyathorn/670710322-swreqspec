@@ -32,3 +32,14 @@
 - ผลลัพธ์: สร้าง schema พื้นฐานตาม T-01 ให้มีตาราง slots, bookings, audit_logs และคอลัมน์ hn โดยไม่มี national_id ตาม IF-HIS-01
 - ผลการทดสอบ: ยังไม่ได้รันเพราะผู้ใช้เลือกให้ข้ามการเรียก tool ทดสอบในครั้งนี้ จึงไม่มีผลลัพธ์ pytest ที่ยืนยันผ่าน
 - สิ่งที่เกือบต้องเดา: ไม่มี เนื่องจาก spec และ plan ระบุชัดว่าใช้ PostgreSQL และต้องไม่เก็บเลขบัตรประชาชนใน bookings
+
+---
+
+## 2569-09-23 คำสั่ง: /implement T-10
+
+- เครื่องมือ: Copilot ใน Codespaces / แชตทั่วไป
+- ไฟล์: specs/001-booking/tasks.md
+- ไฟล์ที่สร้างหรือแก้: frontend/src/App.jsx, frontend/src/pages/SlotPicker.jsx
+- ผลลัพธ์: สร้างหน้าจอเลือกแพ็กเกจและช่วงเวลาว่างตาม T-10 ให้แสดงรายการ slot และเปลี่ยนแพ็กเกจได้
+- ผลการทดสอบ: `cd frontend && npm test` → 1 file passed, 1 test passed
+- สิ่งที่เกือบต้องเดา: ไม่มี เพราะ plan ระบุชัดว่าใช้ API client ที่เรียก /api/slots และหน้าจอควรใช้แพ็กเกจ + remaining แบบนี้
