@@ -54,3 +54,23 @@
 - AI เพิ่ม 3 แถวร่างตาม AC-BKG-01: ทางปกติ / ขอบ / ทางผิด
 - วงเล็บ `(รอ Q-02)` ถูกใส่ตามส่วนที่แสดงหมายเลขคิว เนื่องจากรูปแบบเลขคิวยังไม่กำหนดใน spec
 - ยังไม่เขียนโค้ด test และต้องให้ทีมตรวจแถวในตารางก่อนเปลี่ยนสถานะเป็น "ใช้ได้" จากนั้นสั่ง /testcases อีกครั้ง
+
+---
+
+## 2569-10-07 08:23 คำสั่ง: /testcases AC-BKG-01 specs/001-booking/
+
+- เครื่องมือ: Copilot ใน Codespaces (Agent, Auto)
+- ผลลัพธ์: `specs/001-booking/test-cases.md` มีแถว AC-BKG-01 ในสถานะ "ใช้ได้" แล้ว จึงเข้าสู่โหมดเขียน test
+- AI เพิ่มทดสอบลง `backend/tests/test_AC_BKG_01.py` 3 case: booking สำเร็จ / last seat / unverified user rejected
+- รัน test: `cd backend && pytest tests/test_AC_BKG_01.py -q`
+- ผลลัพธ์: 3 passed
+
+---
+
+## 2569-10-07 08:30 คำสั่ง: /verify specs/001-booking/
+
+- เครื่องมือ: Copilot ใน Codespaces (Agent, Auto)
+- ผล test: backend 6/6 passed, frontend 1/1 passed
+- จำนวนแถวในตารางไปข้างหน้า: ครบ 3, ยังไม่ถึง 8, รอ 1, ช่องโหว่ 2
+- ข้อค้นพบใหม่: F-BKG-01, F-BKG-02, F-BKG-03, F-BKG-04, F-BKG-05
+- สร้าง/อัปเดต: specs/001-booking/rtm.md
